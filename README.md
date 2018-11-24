@@ -1,2 +1,2 @@
-# lacommunautedufutur
+# la communaute du futur
 site
