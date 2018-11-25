@@ -1,4 +1,4 @@
-<?php
+"e<?php
 require('Traitement/bdd/Connect.php')
 ?>
 
@@ -13,7 +13,7 @@ require('Traitement/bdd/Connect.php')
 <body>
 <div id="topbar">
 <a href="index.php"><h1 class="maintitle">Endawn</h1></a>
-<a href="connexion.php"><h3 id="connect" class="title">Connexion</h3></a>
+<a href="#" onclick="document.getElementById('idconnexion').style.display='block'"><h3 id="connect" class="title">Connexion</h3></a>
 <a href="#" onclick="document.getElementById('idinscription').style.display='block'"><h3 id="inscription" class="title">Inscription</h3></a>
 </div>
 
@@ -79,6 +79,34 @@ require('Traitement/bdd/Connect.php')
                     <button type="submit" id="submit" class="btn">Valider</button>
                 </div>
             </form>
+        </div>
+
+
+    <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////!-->
+
+    <div id="idconnexion" class="modal2">
+          <span onclick="document.getElementById('idconnexion').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <form class="formconnexion" method="post" action="Traitement/Connexion.php>
+                <div class="container">
+                  <label id="formtitleconnexion"><h1>Connexion</h1></label>
+                  <br>
+                <div id="formtableauconnexion">
+                  <input type="text" id="pseudoconnexion" name="pseudo" placeholder="Pseudo.." required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                </div>
+                <div id="formtableauconnexion">
+                  <input type="password" id="passconnexion" name="pass" placeholder="Mot de passe.." required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                </div>
+                  <input type="hidden" name="token" id="token" value="<?php echo $token ?>" />
+                <a href="#" id="mdpoublier">Mot de passe oublié ?</a>
+                <br>
+                <br>
+                  <div class="clearfix">
+                      <div id="formtableausubmit">
+                    <button type="submit" id="submit">Valider</button>
+                      </div>
+                  </div>
+                </div>
+              </form>
         </div>
 
 </body>
