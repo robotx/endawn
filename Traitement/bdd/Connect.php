@@ -8,7 +8,7 @@
 $hote	= 'localhost';
 $bdd	= 'new_endawn';
 $user	= 'root';
-$mdp	= 'root';
+$mdp	= 'mimidu59200';
 // ------------------------
 try {
     $co_bdd = 'mysql:host='.$hote.';dbname='.$bdd.'';
