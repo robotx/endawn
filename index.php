@@ -11,7 +11,7 @@ require('Traitement/bdd/Connect.php')
 </head>
 <body>
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
-    <div class="button1" style="margin-top:10%;background-color: blueviolet;"><a href="#" >Administration du projet</a></div>
+    <div class="button1" style="background-color: blueviolet;"><a href="#" >Administration du projet</a></div>
     <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/leftarrow.svg" />
 </div>
 
