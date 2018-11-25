@@ -8,7 +8,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "CREATE DATABASE IF NOT EXISTS new_endawn";
     $conn->exec($sql);
-    echo "La base de donnée s'est créer !<br>";
+    echo "La base de donnée s'est créée !<br>";
 }
 catch(PDOException $e)
 {
