@@ -12,8 +12,8 @@ require('Traitement/bdd/Connect.php')
 <body>
 <div id="topbar"></div>
 <h1 class="maintitle">Endawn</h1>
-<h3 id="connect" class="title">Connexion</h3>
-<h3 id="inscription" class="title">Inscription</h3>
+<a href="connexion.php"><h3 id="connect" class="title">Connexion</h3></a>
+<a href="inscriptionform.php"><h3 id="inscription" class="title">Inscription</h3></a>
 
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
     <div class="button1" id="adminproj"><a href="#"><h3 class="title">Administration du projet</h3></a></div>
