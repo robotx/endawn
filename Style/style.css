@@ -111,8 +111,8 @@ width:100%;
 #adminproj:hover {
     background-color: blueviolet;
     width:100%;
-    -webkit-transition: width 2s;
-    transition: width 2s;
+    -webkit-transition: width .5s;
+    transition: width .5s;
 }
 
 #News {
@@ -128,14 +128,14 @@ width:100%;
 #News:hover {
     background-color: #b39e7d;
     width:100%;
-    -webkit-transition: width 2s;
-    transition: width 2s;
+    -webkit-transition: width .5s;
+    transition: width .5s;
 }
 
 #Forum {
     border-left: 3px solid teal;
     width:0;
-    -webkit-transition: width 2s;
+    -webkit-transition: width .5s;
     transition: all 500ms ease;
 }
 
@@ -146,14 +146,14 @@ width:100%;
 #Forum:hover {
     background-color: teal;
     width:100%;
-    -webkit-transition: width 2s;
-    transition: width 2s;
+    -webkit-transition: width .5s;
+    transition: width .5s;
 }
 
 #Revue {
     border-left: 3px solid indianred;
     width:0;
-    -webkit-transition: width 2s;
+    -webkit-transition: width .5s;
     transition: all 500ms ease;
 }
 
@@ -164,14 +164,14 @@ width:100%;
 #Revue:hover {
     background-color: indianred;
     width:100%;
-    -webkit-transition: width 2s;
-    transition: width 2s;
+    -webkit-transition: width .5s;
+    transition: width .5s;
 }
 
 #Timeline {
     border-left: 3px solid #33a1cd;
     width:0;
-    -webkit-transition: width 2s;
+    -webkit-transition: width .5s;
     transition: all 500ms ease;
 }
 
@@ -182,8 +182,8 @@ width:100%;
 #Timeline:hover {
     background-color: #33a1cd;
     width:100%;
-    -webkit-transition: width 2s;
-    transition: width 2s;
+    -webkit-transition: width .5s;
+    transition: width .5s;
 }
 
 .maintitle {
