@@ -10,34 +10,28 @@ require('Traitement/bdd/Connect.php')
     <link rel="stylesheet" href="Style/style.css" />
 </head>
 <body>
+<div id="topbar"></div>
+<h1 class="maintitle">Endawn</h1>
+<h3 id="connect" class="title">Connexion</h3>
+<h3 id="inscription" class="title">Inscription</h3>
+
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
-   <div class="button1" id="adminproj"><a href="#" ><h4 id="title1">Administration du site</h4></a></div>
-   <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/leftarrow.svg" />
+    <div class="button1" id="adminproj"><a href="#"><h3 class="title">Administration du projet</h3></a></div>
+    <div class="button1" id="News"><a href="#"><h3 class="title">News</h3></a></div>
+    <div class="button1" id="Forum"><a href="#"><h3 class="title">Forum</h3></a></div>
+    <div class="button1" id="Revue"><a href="#"><h3 class="title">Revue</h3></a></div>
+    <div class="button1" id="adminsite"><a href="#"><h3 class="title">Administration du site</h3></a></div>
+
+    <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/leftarrow.svg" />
 </div>
 
 <div id="main">
 
-    <div id="topbar">
-        <div class="w3-container">
-            <h1 style="color:white;text-align:center">Endawn</h1>
-        </div>
-        <img id="openNav" onclick="w3_open()" width="50" height="50" src="Style/rightarrow.svg" />
+    <img id="openNav" onclick="w3_open()" width="50" height="50" src="Style/rightarrow.svg" />
 
-    </div>
 
 </body>
-<script>
-    function w3_open() {
-        document.getElementById("main").style.marginLeft = "15%";
-        document.getElementById("mySidebar").style.width = "15%";
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("openNav").style.display = 'none';
-    }
-    function w3_close() {
-        document.getElementById("main").style.marginLeft = "0%";
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("openNav").style.display = "inline-block";
-    }
-</script>
+<script  src="Js/Style.js"></script>
+
 </html>
 

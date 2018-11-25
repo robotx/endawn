@@ -1,6 +1,8 @@
 body {
     background-color:#3B3B3B;
     margin:0;
+    opacity: .99;
+    z-index: 0;
 }
 
 #topbar {
@@ -8,11 +10,14 @@ body {
     height:10%;
     background-color:#202020;
     position:fixed;
+    opacity:.99;
+    z-index:2;
 }
 
 #openNav {
-    margin-top:40%;
-    margin-left:2%;
+    margin-top:43.35%;
+    margin-left:50px;
+    position:fixed;
 }
 
 #closeNav {
@@ -21,6 +26,8 @@ body {
     left:50px;
     margin-top:290%;
     position: fixed!important;
+    opacity:.99;
+    z-index:100;
 }
 
 .sidebar{
@@ -28,7 +35,9 @@ body {
     width:200px;
     background-color:#272727;
     position:fixed!important;
-    overflow:hidden
+    overflow:hidden;
+    opacity: .99;
+    z-index: 100;
 }
 
 .card{
@@ -37,7 +46,9 @@ body {
 
 .animate-left{
     position:relative;
-    animation:animateleft 0.4s
+    animation:animateleft 0.4s;
+    opacity: .99;
+    z-index: 100;
 }
 
 @keyframes animateleft{
@@ -50,19 +61,71 @@ body {
     }
 }
 
-.button1 {
-    width:100%;
-    height:7%;
+a{
+    text-decoration: none;
 }
 
-#adminproj {
-    margin-top:245%;
+#adminsite {
+    position:absolute!important;
+    bottom:20%;
     background-color: blueviolet;
 }
 
-#title1 {
-    margin-top: 10px;
-    text-align: center;
+.button1 {
+    width:100%;
+    height:5%;
+    padding: 10px 10px 10px 40px;
+    position: relative;
+}
+
+#adminproj {
+    margin-top:40%;
+    border-left: 3px solid blueviolet;
+    <!--background-color: blueviolet;-->
+}
+
+#News {
+    <!--background-color: #b39e7d;-->
+}
+
+#Forum {
+    <!-- background-color: teal;-->
+}
+
+
+#Revue {
+    <!--background-color: indianred;-->
+}
+
+
+
+.maintitle {
+    padding-top:.5%;
+    margin-left:45%;
+    margin-right:45%;
+    color:white;
+    position:absolute;
+    opacity: .99;
+    z-index: 105;
+}
+
+.title {
     color:white;
     text-decoration: none;
+}
+
+#connect {
+    padding-top: 1%;
+    right:17%;
+    position: fixed!important;
+    opacity: .99;
+    z-index: 105;
+}
+
+#inscription {
+    padding-top: 1%;
+    right:10%;
+    position: fixed!important;
+    opacity: .99;
+    z-index: 105;
 }
