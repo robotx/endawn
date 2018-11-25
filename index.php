@@ -20,6 +20,7 @@ require('Traitement/bdd/Connect.php')
     <div class="button1" id="News"><a href="#"><h3 class="title">News</h3></a></div>
     <div class="button1" id="Forum"><a href="#"><h3 class="title">Forum</h3></a></div>
     <div class="button1" id="Revue"><a href="#"><h3 class="title">Revue</h3></a></div>
+    <div class="button1" id="Timeline"><a href="#"><h3 class="title">Timeline</h3></a></div>
     <div class="button1" id="adminsite"><a href="#"><h3 class="title">Administration du site</h3></a></div>
 
     <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/leftarrow.svg" />
