@@ -5,8 +5,6 @@ require_once ('../Outils/glofunction.php');
 
 $noerrorresultat= false;
 $noerrorresultatredirect = false;
-$validationmessagee = false;
-$validationclefmessagerie = false;
 $supprvalid = false;
 
 
@@ -46,8 +44,6 @@ if($timestampresult < $tempsnowconversion){
     $noerrorresultatclefmessagerie = true;
 
 }else{
-
-    if($validationmessagee == true && $validationclefmessagerie == true){
         try {
             $sql = "INSERT INTO Users(nom,prenom,pseudo, pass, email, sexe, age, pays, lien_image)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -60,10 +56,6 @@ if($timestampresult < $tempsnowconversion){
             erreur("98","t_in_v_error_5.2");//echo $sql . "<br>" . $e->getMessage();
             $noerrorresultat = true;
         }
-
-    }else{
-        erreur("156","t_in_v_error_5");
-    }
 }
 
 if($noerrorresultat == false){
