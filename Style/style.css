@@ -17,6 +17,7 @@ body {
 
 #closeNav {
     margin-top:290%;
+    position: fixed;
 }
 
 #leftarrow {
