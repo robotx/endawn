@@ -11,7 +11,7 @@ require('Traitement/bdd/Connect.php')
 </head>
 <body>
 <div id="topbar"></div>
-<h1 class="maintitle">Endawn</h1>
+<a href="index.php"><h1 class="maintitle">Endawn</h1></a>
 <a href="connexion.php"><h3 id="connect" class="title">Connexion</h3></a>
 <a href="inscriptionform.php"><h3 id="inscription" class="title">Inscription</h3></a>
 
