@@ -11,8 +11,7 @@ require('Traitement/bdd/Connect.php')
 </head>
 <body>
 <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
-    <button class="w3-bar-item w3-button w3-large"
-            onclick="w3_close()">Close &times;</button>
+    <img id="openNav" class="w3-button" onclick="w3_close()" width="50" height="50" src="Style/leftarrow.svg" />
     <a href="#" class="w3-bar-item w3-button">Link 1</a>
     <a href="#" class="w3-bar-item w3-button">Link 2</a>
     <a href="#" class="w3-bar-item w3-button">Link 3</a>
@@ -21,10 +20,11 @@ require('Traitement/bdd/Connect.php')
 <div id="main">
 
     <div id="topbar">
-        <button id="openNav" class="w3-button" onclick="w3_open()"><img width="50" height="50" src="Style/leftarrow.svg" /></button>
         <div class="w3-container">
             <h1 style="color:white;text-align:center">Endawn</h1>
         </div>
+        <img id="openNav" class="w3-button" onclick="w3_open()" width="50" height="50" src="Style/rightarrow.svg" />
+
     </div>
 
 </body>
