@@ -25,7 +25,7 @@ try {
 
     $create = $pdo;
     $create->exec($sqlmember);
-    echo "La table Utilisateurs s'est créer !<br>";
+    echo "La table Utilisateurs s'est crééé !<br>";
 
 }catch(PDOException $e){echo $sql . "<br>" . $e->getMessage();die();}
 
