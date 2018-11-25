@@ -12,6 +12,7 @@ require('Traitement/Connect.php')
 <body>
 
 <div id="topbar" />
+<div id="sidebar" />
 
 
 </body>
