@@ -231,19 +231,18 @@ if($_POST['token'] == $_SESSION['tokenins']
         ?><font color="green"><big>Vous allez reçevoir un mail pour la validation de votre compte</big></font><br/><?php
 
         $mail_destinataire = $email;
-        $sujet = "Validation de l'inscription sur le site Myns";
-        $message = "Cet email a été envoyé à partir de http://www.myns.fr .
-                     Petit rappel de tes identifiants
+        $sujet = "Validation de l'inscription sur le site Endawn";
+        $message = "Cet email a été envoyé à partir de http://www.endawn.com
+                     Petit rappel de tes identifiants :
                      Ton pseudo est: $pseudo
                      Ton mot de passe est: ********
-                     Cet email nous permet de verifier que ton adresse mail est correcte, ce afin de prevenir du spam et des abus.
+                     Cet email nous permet de verifier que ton adresse mail est correcte.
                      Clique sur le lien ci dessous afin de valider ton inscription :
-                     http://192.168.1.16/myns_website/traitement/traitementinscriptionvalider.php?pseudo=$pseudo&clef=$clef
+                     http://127.0.0.1/endawn/Traitement/Inscriptionvalide.php?pseudo=$pseudo&clef=$clef
                      (Lien valide pendant 24h)
-                     Si cet email ne t'es pas destiné, merci de nous contacter a : http://www.myns.fr/contact
 
                      Cordialement
-                     Myns";
+                     Administrateur";
         $head = "Bonjour $pseudo ";
         mail($mail_destinataire, $sujet, $message, $head);
     }else{
