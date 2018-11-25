@@ -1,0 +1,12 @@
+#forminscription {
+    width:60%;
+    height:60%;
+    background-color:#202020;
+    margin-top: 10%;
+    left: 20%;
+    right: 20%;
+    border: none;
+    border-radius: 20px;
+    position: fixed!important;
+
+}
