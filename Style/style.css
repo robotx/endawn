@@ -68,7 +68,7 @@ a{
 #adminsite {
     position:absolute!important;
     bottom:20%;
-    background-color: blueviolet;
+    border-left: 3px solid blueviolet;
 }
 
 .button1 {
@@ -85,16 +85,20 @@ a{
 }
 
 #News {
-    <!--background-color: #b39e7d;-->
+    border-left: 3px solid #b39e7d;
 }
 
 #Forum {
-    <!-- background-color: teal;-->
+    border-left: 3px solid teal;
 }
 
 
 #Revue {
-    <!--background-color: indianred;-->
+    border-left: 3px solid indianred;
+}
+
+#Timeline {
+    border-left: 3px solid indianred;
 }
 
 
