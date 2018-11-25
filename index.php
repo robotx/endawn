@@ -8,12 +8,13 @@ require('Traitement/bdd/Connect.php')
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="Style/normalize.css" />
     <link rel="stylesheet" href="Style/style.css" />
+    <link rel="stylesheet" href="Style/insform.css" />
 </head>
 <body>
 <div id="topbar">
 <a href="index.php"><h1 class="maintitle">Endawn</h1></a>
 <a href="connexion.php"><h3 id="connect" class="title">Connexion</h3></a>
-<a href="inscriptionform.php"><h3 id="inscription" class="title">Inscription</h3></a>
+<a href="#" onclick="document.getElementById('idinscription').style.display='block'"><h3 id="inscription" class="title">Inscription</h3></a>
 </div>
 
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
@@ -31,9 +32,58 @@ require('Traitement/bdd/Connect.php')
 
     <img id="openNav" onclick="w3_open()" width="50" height="50" src="Style/rightarrow.svg" />
 
+    <div id="idinscription" class="modal">
+        <span onclick="document.getElementById('idinscription').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <form id="forminscription" method="post" action="Traitement/Inscription.php" enctype="multipart/form-data">
+                <h2 id="formtitle">Inscription</h2>
+                <div id="formtableau">
+                    <input class="input-field" type="text" id="nom" name="nom" placeholder="Nom" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+
+                    <input class="input-field" type="text" id="prenom" name="prenom" placeholder="Prenom" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                </div>
+
+                <div id="formtableau">
+                    <input class="input-field" type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                    <input class="input-field" type="text" id="email" name="email" placeholder="Email" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                </div>
+
+                <div id="formtableau">
+                    <select id="sexe" name="sexe">
+                        <option value="Masculin">Masculin</option>
+                        <option value="Feminin">Feminin</option>
+
+                        <input class="input-field" type="date" id="age" name="age">
+                </div>
+                <div id="formtableau">
+                    <select id="pays" name="pays">
+                        <option value="France">France</option>
+                        <option value="Canada">Canada</option>
+                        <option value="USA">USA</option>
+                    </select>
+
+                    <!-- On limite le fichier à 100Ko -->
+                    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                    <input type="file" name="avatar">
+                </div>
+                <div id="formtableau">
+                    <input class="input-field" type="password" id="pass" name="pass"
+                           placeholder="Mot de passe" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+
+                    <input class="input-field" type="password" id="password_confirm" name="password_confirm"
+                           placeholder="Retaper le mot de passe"required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                </div>
+                <input type="hidden" name="token" id="token" value="<?php echo $token ?>" />
+                <br>
+                <br>
+                <div id="formtableausubmit">
+                    <button type="submit" id="submit" class="btn">Valider</button>
+                </div>
+            </form>
+        </div>
 
 </body>
-<script  src="Js/Style.js"></script>
+<script src="Js/Style.js"></script>
+<script src="Js/Connexion.js"></script>
 
 </html>
 
