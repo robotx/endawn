@@ -10,3 +10,89 @@
     position: fixed!important;
 
 }
+
+#formtitle {
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+
+}
+
+#formtableau {
+    padding-left: 17%;
+    width: 83%;
+}
+
+#formtableausubmit {
+    width: 100%;
+}
+
+input[type=text], select, textarea {
+    color: rgba(106, 106, 106, 0.8);
+    width: 40%;
+    margin: 10px 8px 22px 0;
+    display: inline-block;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    background: transparent;
+}
+
+input[type=date]{
+    color: rgba(106, 106, 106, 0.8);
+    width: 40%;
+    margin: 10px 8px 22px 0;
+    display: inline-block;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    background: transparent;
+}
+
+input[type=password]{
+    color: rgba(106, 106, 106, 0.8);
+    width: 40%;
+    margin: 10px 8px 22px 0;
+    display: inline-block;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    background: transparent;
+}
+
+input[type=file]{
+ color: rgba(106, 106, 106, 0.8);
+ width: 40%;
+ margin: 10px 8px 22px 0;
+ display: inline-block;
+ padding: 12px;
+ border: none;
+ border-bottom: 1px solid #ccc;
+ border-radius: 4px;
+ resize: vertical;
+ background: transparent;
+}
+
+#submit{
+    align-content: center;
+    background-color: #5e34e4;
+    border-radius: 20px;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+    display: block;
+    margin : auto;
+}
+
+.submit:hover {
+    opacity: 1;
+}

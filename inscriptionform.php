@@ -44,50 +44,49 @@ require('Traitement/bdd/Connect.php')
 
 
     <form id="forminscription" method="post" action="Traitement/Inscription.php" enctype="multipart/form-data">
-        <h2>Inscription</h2>
-        <i class="fa fa-user icon"></i>
-        <input class="input-field" type="text" id="nom" name="nom" placeholder="Nom" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+        <h2 id="formtitle">Inscription</h2>
+        <div id="formtableau">
+            <input class="input-field" type="text" id="nom" name="nom" placeholder="Nom" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
 
-        <i class="fa fa-user icon"></i>
-        <input class="input-field" type="text" id="prenom" name="prenom" placeholder="Prenom" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+            <input class="input-field" type="text" id="prenom" name="prenom" placeholder="Prenom" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+        </div>
 
-        <i class="fa fa-user icon"></i>
-        <input class="input-field" type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+        <div id="formtableau">
+            <input class="input-field" type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+            <input class="input-field" type="text" id="email" name="email" placeholder="Email" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+        </div>
 
-        <i class="fa fa-envelope icon"></i>
-        <input class="input-field" type="text" id="email" name="email" placeholder="Email" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+        <div id="formtableau">
+            <select id="sexe" name="sexe">
+                <option value="Masculin">Masculin</option>
+                <option value="Feminin">Feminin</option>
 
-        <i class="fa fa-key icon"></i>
-        <select id="sexe" name="sexe">
-            <option value="Masculin">Masculin</option>
-            <option value="Feminin">Feminin</option>
+                <input class="input-field" type="date" id="age" name="age">
+        </div>
+        <div id="formtableau">
+                <select id="pays" name="pays">
+                    <option value="France">France</option>
+                    <option value="Canada">Canada</option>
+                    <option value="USA">USA</option>
+                </select>
 
-            <i class="fa fa-key icon"></i>
-            <input class="input-field" type="date" id="age" name="age">
+                <!-- On limite le fichier à 100Ko -->
+                <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                <input type="file" name="avatar">
+        </div>
+        <div id="formtableau">
+                <input class="input-field" type="password" id="pass" name="pass"
+                       placeholder="Mot de passe" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
 
-            <i class="fa fa-key icon"></i>
-            <select id="pays" name="pays">
-                <option value="France">France</option>
-                <option value="Canada">Canada</option>
-                <option value="USA">USA</option>
-            </select>
-
-            <!-- On limite le fichier à 100Ko -->
-            <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-            Fichier : <input type="file" name="avatar">
-            <br>
-            <br>
-            <i class="fa fa-key icon"></i>
-            <input class="input-field" type="password" id="pass" name="pass"
-                   placeholder="Mot de passe" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
-
-            <i class="fa fa-key icon"></i>
-            <input class="input-field" type="password" id="password_confirm" name="password_confirm"
-                   placeholder="Retaper le mot de passe"required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
-
-            <input type="hidden" name="token" id="token" value="<?php echo $token ?>" />
-
-            <button type="submit" class="btn">Valider</button>
+                <input class="input-field" type="password" id="password_confirm" name="password_confirm"
+                       placeholder="Retaper le mot de passe"required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+        </div>
+                <input type="hidden" name="token" id="token" value="<?php echo $token ?>" />
+        <br>
+        <br>
+        <div id="formtableausubmit">
+                <button type="submit" id="submit" class="btn">Valider</button>
+        </div>
     </form>
 
 
