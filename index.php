@@ -17,12 +17,12 @@ require('Traitement/bdd/Connect.php')
 </div>
 
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
-    <a href="#"><div class="button1" id="adminproj"><h3 class="title">Administration du projet</h3></div></a>
+    <a href="#"><div class="button1" id="adminproj"><h3 id="adminbtntitle" class="title">Administration du projet</h3></div></a>
     <a href="#"><div class="button1" id="News"><h3 class="title">News</h3></div></a>
     <a href="#"><div class="button1" id="Forum"><h3 class="title">Forum</h3></div></a>
     <a href="#"><div class="button1" id="Revue"><h3 class="title">Revue</h3></div></a>
     <a href="#"><div class="button1" id="Timeline"><h3 class="title">Timeline</h3></div></a>
-    <a href="#"><div class="button1" id="adminsite"><h3 class="title">Administration du site</h3></div></a>
+    <a href="#"><div class="button1" id="adminsite"><h3 id="adminbtntitle" class="title">Administration du site</h3></div></a>
 
     <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/leftarrow.svg" />
 </div>
