@@ -3,7 +3,7 @@ define("safe","OK");
 require_once('bdd/Connect.php');
 require_once ('../Outils/glofunction.php');
 session_start();
-define('DELAI_MAXIMUM', 300);
+define('DELAI_MAXIMUM', 600);
 
 if($_POST['token'] == $_SESSION['tokenins']
     && (time() - $_SESSION['token_timeins']) <= DELAI_MAXIMUM)

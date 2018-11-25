@@ -1,5 +1,14 @@
 "e<?php
-require('Traitement/bdd/Connect.php')
+require('Traitement/bdd/Connect.php');
+
+session_start();
+
+$token = md5(uniqid(rand(), TRUE));
+$_SESSION['tokenins'] = $token;
+$_SESSION['token_timeins'] = time();
+
+$_SESSION['token'] = $token;
+$_SESSION['token_time'] = time();
 ?>
 
 <html>
@@ -86,27 +95,25 @@ require('Traitement/bdd/Connect.php')
 
     <div id="idconnexion" class="modal2">
           <span onclick="document.getElementById('idconnexion').style.display='none'" class="close" title="Close Modal">&times;</span>
-              <form class="formconnexion" method="post" action="Traitement/Connexion.php>
-                <div class="container">
-                  <label id="formtitleconnexion"><h1>Connexion</h1></label>
-                  <br>
+          <form class="formconnexion" method="post" action="Traitement/Connexion.php">
+            <div class="container">
+              <label id="formtitleconnexion"><h1>Connexion</h1></label>
+              <br>
                 <div id="formtableauconnexion">
-                  <input type="text" id="pseudoconnexion" name="pseudo" placeholder="Pseudo.." required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                    <input type="text" id="pseudoconnexion" name="pseudo" placeholder="Pseudo.." required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
                 </div>
-                <div id="formtableauconnexion">
-                  <input type="password" id="passconnexion" name="pass" placeholder="Mot de passe.." required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
-                </div>
-                  <input type="hidden" name="token" id="token" value="<?php echo $token ?>" />
-                <a href="#" id="mdpoublier">Mot de passe oublié ?</a>
-                <br>
-                <br>
-                  <div class="clearfix">
-                      <div id="formtableausubmit">
-                    <button type="submit" id="submit">Valider</button>
-                      </div>
-                  </div>
-                </div>
-              </form>
+                    <div id="formtableauconnexion">
+                      <input type="password" id="passconnexion" name="pass" placeholder="Mot de passe.." required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                    </div>
+                    <input type="hidden" name="token" id="token" value="<?php echo $token ?>" />
+                        <a href="#" id="mdpoublier">Mot de passe oublié ?</a>
+                        <br>
+                        <br>
+                          <div id="formtableausubmit">
+                            <button type="submit" id="submit">Valider</button>
+                          </div>
+              </div>
+          </form>
         </div>
 
 </body>
