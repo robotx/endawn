@@ -205,10 +205,10 @@ if($_POST['token'] == $_SESSION['tokenins']
                 $clef = "0123456789";
                 $clef = rand();
                 $timestamp= time()+86400; //24h
-                $sql = "INSERT INTO Userstemp(nom, prenom, pseudo, pass, email, sexe, age, pays, lien_image, timestamp1, clef)
+                $sql = "INSERT INTO Userstemp(nom, prenom, pseudo, pass, email, sexe, age, pays, avatar, timestamp1, clef)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $insert = $pdo->prepare($sql);
-                $insert->execute(array($nom,$prenom,$pseudo,password_hash($pass, PASSWORD_DEFAULT),$email,$sexe,$age,$pays, "style/img/upload/$fichier", $timestamp, $clef));
+                $insert->execute(array($nom,$prenom,$pseudo,password_hash($pass, PASSWORD_DEFAULT),$email,$sexe,$age,$pays, "Style/img/upload/$fichier", $timestamp, $clef));
                 $noerrorresultat = true;
             }
             catch(PDOException $e)

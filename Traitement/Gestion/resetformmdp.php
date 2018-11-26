@@ -21,16 +21,18 @@ while($data = $select->fetch())
 }
 if($email != $emailsql){ // si l'adresse mail n'existe pas
     infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe.");
+    die();
 }else{ // si l'adresse mail existe
+        $password = generation_pwd(6);
+
         $mail_destinataire = $emailsql;
         $sujet = "Reinitialisation du mot de passe";
         $message = "Cet email a été envoyé à partir de http://www.endawn.com .
         Tu as fait une demande de réinitialisation de mot de passe.
-        Clique sur ce lien et rentre ton nouveau mot de passe.
-        http://127.0.0.1/myns_website/confresetmdp.php?id=$idsearch&pseudo=$pseudo&clef=$clef
-        (Lien valide pendant 1h)
+        Voici ton mot de passe : '.$password.'
         
-        Si tu n'as pas fait de demande, NE CLIQUE PAS SUR LE LIEN !
+        Lien vers la réinitialisation de mot de passe : 
+        
         Cordialement
         Administrateur";
         $head = "Bonjour $pseudosql ";

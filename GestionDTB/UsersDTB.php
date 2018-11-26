@@ -16,11 +16,11 @@ try {
     sexe varchar(255) CHARACTER SET utf8mb4 NOT NULL,
     age date NOT NULL,
     pays varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    lien_image varchar(60) CHARACTER SET utf8mb4 NOT NULL,
+    avartar varchar(60) CHARACTER SET utf8mb4 NOT NULL,
     timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     avertissement int(11) NOT NULL DEFAULT '0',
     ban varchar(10) NOT NULL DEFAULT 'non',
-    r_mdp_clef varchar(255) NOT NULL DEFAULT 'rien',
+    r_mdp_clef varchar(255) CHARACTER SET utf8mb4 NOT NULL,
     r_mdp_time varchar(255) DEFAULT 'NULL',
     groupid int(1) DEFAULT '0',
     PRIMARY KEY (`id`))";

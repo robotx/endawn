@@ -28,7 +28,7 @@ while($data = $select->fetch())
     $sexeresult = $data['sexe'];
     $ageresult = $data['age'];
     $paysresult = $data['pays'];
-    $lien_imageresult = $data['lien_image'];
+    $avatarresult = $data['avatar'];
     $timestampresult = $data['timestamp1'];
     $clefresult = $data['clef'];
     $grouperesult = $data['groupid'];
@@ -44,10 +44,10 @@ if($timestampresult < $tempsnowconversion){
 
 }else{
         try {
-            $sql = "INSERT INTO Users(nom,prenom,pseudo, pass, email, sexe, age, pays, lien_image)
+            $sql = "INSERT INTO Users(nom,prenom,pseudo, pass, email, sexe, age, pays, avatar)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $insert = $pdo->prepare($sql);
-            $insert->execute(array($nomresult,$prenomresult,$pseudoresult,$passresult,$emailresult,$sexeresult,$ageresult,$paysresult, $lien_imageresult));
+            $insert->execute(array($nomresult,$prenomresult,$pseudoresult,$passresult,$emailresult,$sexeresult,$ageresult,$paysresult, $avatarresult));
             $noerrorresultat = false;
         }
         catch(PDOException $e)
@@ -69,7 +69,7 @@ if($noerrorresultat == false){
         erreur("98","t_in_v_error_6");//echo $sql . "<br>" . $e->getMessage();
         $supprvalid = false;
     }
-}else if(($noerrorresultatredirect == true || $noerrorresultat == true) || $validationmessagee == false){
+}else if(($noerrorresultatredirect == true || $noerrorresultat == true)){
     try {
         $sql = "DELETE FROM Userstemp WHERE id='$idresult'";
         $select = $pdo->prepare($sql);

@@ -77,7 +77,7 @@ if($_POST['token'] == $_SESSION['token']
                 $sexeresult = $data['sexe'];
                 $ageresult = $data['age'];
                 $paysresult = $data['pays'];
-                $lien_imageresult = $data['lien_image'];
+                $avatarresult = $data['avatar'];
                 $bansql = $data['ban'];
                 $avertissementsql = $data['avertissement'];
                 $grouperesult = $data['groupid'];
@@ -105,7 +105,7 @@ if($_POST['token'] == $_SESSION['token']
                     $_SESSION['sexe'] = $sexeresult;
                     $_SESSION['age'] = $ageresult;
                     $_SESSION['pays'] = $paysresult;
-                    $_SESSION['lien_image'] = $lien_imageresult;
+                    $_SESSION['avatar'] = $avatarresult;
                     $_SESSION['groupid'] = $grouperesult;
 
                     if($grouperesult == 0){
