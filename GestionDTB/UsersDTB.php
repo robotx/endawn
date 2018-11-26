@@ -44,7 +44,7 @@ try {
     sexe varchar(255) CHARACTER SET utf8mb4 NOT NULL,
     age date NOT NULL,
     pays varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-    lien_image varchar(60) CHARACTER SET utf8mb4 NOT NULL,
+    avartar varchar(60) CHARACTER SET utf8mb4 NOT NULL,
     timestamp1 varchar(255) CHARACTER SET utf8mb4 NOT NULL,
     clef varchar(255) CHARACTER SET utf8mb4 NOT NULL,
     groupid int(1) DEFAULT '0',
