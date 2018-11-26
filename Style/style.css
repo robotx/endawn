@@ -71,18 +71,30 @@ a{
     text-decoration: none;
 }
 
+.button1 {
+    width:100%;
+    height:5%;
+    padding: 10px 10px 10px 40px;
+    position: relative;
+}
+
 #adminsite {
     position:absolute!important;
     bottom:20%;
-    width:0;
     border-left: 3px solid blueviolet;
-    -webkit-transition: width 2s;
-    transition: width 2s;
+    width: 0;
+    transition: all 500ms ease;
+}
+
+#adminsite:hover:before {
+    width:100%;
 }
 
 #adminsite:hover {
     background-color: blueviolet;
     width:100%;
+    -webkit-transition: width .5s;
+    transition: width .5s;
 }
 
 #adminbtntitle {
@@ -91,14 +103,20 @@ a{
     margin-top:-0px;
 }
 
-.button1 {
-    width:100%;
-    height:5%;
-    padding: 10px 10px 10px 40px;
-    position: relative;
+.avatar {
+    border-radius:50px;
+    margin-top:15%;
+    margin-left:31%;
+    margin-right:31%;
 }
+
+.avatarname {
+    color:white;
+    text-align: center;
+}
+
 #adminproj {
-    margin-top: 40%;
+    margin-top: 25%;
     border-left: 3px solid blueviolet;
     width: 0;
     transition: all 500ms ease;
@@ -217,14 +235,3 @@ width:100%;
     z-index: 105;
 }
 
-.avatar {
-    border-radius:50px;
-    margin-top:15%;
-    margin-left:31%;
-    margin-right:31%;
-}
-
-.avatarname {
-    color:white;
-    text-align: center;
-}

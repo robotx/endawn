@@ -2,7 +2,7 @@
 require_once ('Outils/glofunction.php');
 session_start();
 $pseudo = $_SESSION['pseudo'];
-$lien_image = $_SESSION['lien_image'];
+$avatar = $_SESSION['avatar'];
 $groupid = $_SESSION['groupid'];
 ?>
 
