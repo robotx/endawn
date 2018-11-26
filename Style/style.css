@@ -221,6 +221,12 @@ width:100%;
     text-decoration: none;
 }
 
+#logout {
+    position:absolute;
+    bottom: 100px;
+    left:50%;
+}
+
 #connect {
     padding-top: 1%;
     right:17%;
