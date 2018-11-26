@@ -30,12 +30,12 @@ $groupid = $_SESSION['groupid'];
     <a href="#"><div class="button1" id="Timeline"><h3 class="title">Timeline</h3></div></a>
     <a href="#"><div class="button1" id="adminsite"><h3 id="adminbtntitle" class="title">Administration du site</h3></div></a>
 
-    <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/leftarrow.svg" />
+    <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/img/leftarrow.svg" />
 </div>
 
 <div id="main">
 
-    <img id="openNav" onclick="w3_open()" width="50" height="50" src="Style/rightarrow.svg" />
+    <img id="openNav" onclick="w3_open()" width="50" height="50" src="Style/img/rightarrow.svg" />
 
 <?php
 $idinfo = $_GET["idinfo"];

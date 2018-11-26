@@ -45,7 +45,7 @@ $_SESSION['token_time'] = time();
 
 <div id="main">
 
-    <img id="openNav" onclick="w3_open()" width="50" height="50" src="Style/css/rightarrow.svg" />
+    <img id="openNav" onclick="w3_open()" width="50" height="50" src="Style/img/rightarrow.svg" />
 
     <div id="idinscription" class="modal">
         <span onclick="document.getElementById('idinscription').style.display='none'" class="close" title="Close Modal">&times;</span>
