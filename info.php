@@ -18,8 +18,8 @@ $groupid = $_SESSION['groupid'];
 <body>
 <div id="topbar">
     <a href="index.php"><h1 class="maintitle">Endawn</h1></a>
-    <a href="#" onclick="document.getElementById('idconnexion').style.display='block'"><h3 id="connect" class="title">Connexion</h3></a>
-    <a href="#" onclick="document.getElementById('idinscription').style.display='block'"><h3 id="inscription" class="title">Inscription</h3></a>
+    <?php if(!isset($_SESSION['id'])) echo '<a href="#" onclick="document.getElementById(\'idconnexion\').style.display=\'block\'"><h3 id="connect" class="title">Connexion</h3></a>
+    <a href="#" onclick="document.getElementById(\'idinscription\').style.display=\'block\'"><h3 id="inscription" class="title">Inscription</h3></a>'?>
 </div>
 
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">

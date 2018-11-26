@@ -41,7 +41,6 @@ if($timestampresult < $tempsnowconversion){
 
     $noerrorresultatredirect = true;
     $noerrorresultat = true;
-    $noerrorresultatclefmessagerie = true;
 
 }else{
         try {
@@ -70,7 +69,7 @@ if($noerrorresultat == false){
         erreur("98","t_in_v_error_6");//echo $sql . "<br>" . $e->getMessage();
         $supprvalid = false;
     }
-}else if(($noerrorresultatredirect == true || $noerrorresultat == true) || $validationmessagee == false || $noerrorresultatclefmessagerie == true || $validationclefmessagerie == false){
+}else if(($noerrorresultatredirect == true || $noerrorresultat == true) || $validationmessagee == false){
     try {
         $sql = "DELETE FROM Userstemp WHERE id='$idresult'";
         $select = $pdo->prepare($sql);
@@ -86,11 +85,11 @@ if($noerrorresultat == false){
     die();
 
 }
-if($noerrorresultatredirect == false && ($supprvalid == true && $validationmessagee == true && $validationclefmessagerie == true)){
+if($noerrorresultatredirect == false && $supprvalid == true){
     $messagebv = "Bienvenue, vous êtes maintenant inscrit sur le site. Vous pouvez désormais vous connecter.";
     header('location: ../info.php?idinfo='.$messagebv.'');
     die();
-}else if($noerrorresultatredirect == true && ($supprvalid == false && $validationmessagee == false && $validationclefmessagerie == false)){
+}else if($noerrorresultatredirect == true && $supprvalid == false){
     erreur("156","t_in_v_error_666");
     die();
 }

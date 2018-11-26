@@ -1,12 +1,16 @@
-"e<?php
+<?php
 require('Traitement/bdd/Connect.php');
 
 session_start();
+$pseudo = $_SESSION['pseudo'];
+$lien_image = $_SESSION['lien_image'];
+$groupid = $_SESSION['groupid'];
 
-$token = md5(uniqid(rand(), TRUE));
-$_SESSION['tokenins'] = $token;
+$tokenins = md5(uniqid(rand(), TRUE));
+$_SESSION['tokenins'] = $tokenins;
 $_SESSION['token_timeins'] = time();
 
+$token = md5(uniqid(rand(), TRUE));
 $_SESSION['token'] = $token;
 $_SESSION['token_time'] = time();
 ?>
@@ -22,8 +26,8 @@ $_SESSION['token_time'] = time();
 <body>
 <div id="topbar">
 <a href="index.php"><h1 class="maintitle">Endawn</h1></a>
-<a href="#" onclick="document.getElementById('idconnexion').style.display='block'"><h3 id="connect" class="title">Connexion</h3></a>
-<a href="#" onclick="document.getElementById('idinscription').style.display='block'"><h3 id="inscription" class="title">Inscription</h3></a>
+<?php if(!isset($_SESSION['id'])) echo '<a href="#" onclick="document.getElementById(\'idconnexion\').style.display=\'block\'"><h3 id="connect" class="title">Connexion</h3></a>
+<a href="#" onclick="document.getElementById(\'idinscription\').style.display=\'block\'"><h3 id="inscription" class="title">Inscription</h3></a>'?>
 </div>
 
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
@@ -81,7 +85,7 @@ $_SESSION['token_time'] = time();
                     <input class="input-field" type="password" id="password_confirm" name="password_confirm"
                            placeholder="Retaper le mot de passe"required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
                 </div>
-                <input type="hidden" name="token" id="token" value="<?php echo $token ?>" />
+                <input type="hidden" name="token" id="token" value="<?php echo $tokenins ?>" />
                 <br>
                 <br>
                 <div id="formtableausubmit">
