@@ -216,3 +216,15 @@ width:100%;
     opacity: .99;
     z-index: 105;
 }
+
+.avatar {
+    border-radius:50px;
+    margin-top:15%;
+    margin-left:31%;
+    margin-right:31%;
+}
+
+.avatarname {
+    color:white;
+    text-align: center;
+}

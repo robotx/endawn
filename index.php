@@ -31,6 +31,8 @@ $_SESSION['token_time'] = time();
 </div>
 
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
+    <img class="avatar" src="Style/img/upload/mononoke.jpg" width="100px" height="100px" />
+    <h2 class="avatarname">Bonjour, Himeji</h2>
     <a href="#"><div class="button1" id="adminproj"><h3 id="adminbtntitle" class="title">Administration du projet</h3></div></a>
     <a href="#"><div class="button1" id="News"><h3 class="title">News</h3></div></a>
     <a href="#"><div class="button1" id="Forum"><h3 class="title">Forum</h3></div></a>
@@ -38,12 +40,12 @@ $_SESSION['token_time'] = time();
     <a href="#"><div class="button1" id="Timeline"><h3 class="title">Timeline</h3></div></a>
     <a href="#"><div class="button1" id="adminsite"><h3 id="adminbtntitle" class="title">Administration du site</h3></div></a>
 
-    <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/leftarrow.svg" />
+    <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/img/leftarrow.svg" />
 </div>
 
 <div id="main">
 
-    <img id="openNav" onclick="w3_open()" width="50" height="50" src="Style/rightarrow.svg" />
+    <img id="openNav" onclick="w3_open()" width="50" height="50" src="Style/css/rightarrow.svg" />
 
     <div id="idinscription" class="modal">
         <span onclick="document.getElementById('idinscription').style.display='none'" class="close" title="Close Modal">&times;</span>
