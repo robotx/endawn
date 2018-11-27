@@ -120,7 +120,7 @@ if($_POST['token'] == $_SESSION['tokenins']
     define('HEIGHT_MAX', 200);  // Hauteur max de l'image en pixels
     $erreurimg;
     $erreurimgupload;
-    $dossier = '../Style/img/upload/';
+    $dossier = $_SERVER['DOCUMENT_ROOT'].'/endawn/Style/img/upload/';
     $fichier = basename($_FILES['avatar']['name']);
     $taille_maxi = 100000;
     $taille = filesize($_FILES['avatar']['tmp_name']);

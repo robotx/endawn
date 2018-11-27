@@ -3,8 +3,6 @@ function reduiretexte($texte)
 {
     $max_caracteres=70;
 
-    $texte2 = $texte;
-
     if (strlen($texte)<$max_caracteres){
         $texte = substr($texte, 0, $max_caracteres);
     }
