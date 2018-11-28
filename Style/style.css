@@ -226,8 +226,8 @@
 
     #logout {
         position: absolute;
-        bottom: 100px;
-        left: 50%;
+        bottom: 90px;
+        left: 55%;
     }
 
     #connect {
@@ -248,7 +248,7 @@
 
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1366px) {
 
     #connect {
         margin-right:4%;

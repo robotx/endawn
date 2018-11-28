@@ -40,7 +40,7 @@ $_SESSION['token_time'] = time();
     <a href="#"><div class="button1" id="Revue"><h3 class="title">Revue</h3></div></a>
     <a href="#"><div class="button1" id="Timeline"><h3 class="title">Timeline</h3></div></a>
     <a href="#"><div class="button1" id="adminsite"><h3 id="adminbtntitle" class="title">Administration du site</h3></div></a>
-    <a href="Traitement/logout.php"><img id="logout" src="Style/img/logout.svg" width="50" height="50" /></a>
+    <a href="Traitement/logout.php"><img id="logout" width="70" height="70" src="Style/img/logout.svg" /></a>
     <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/img/leftarrow.svg" />
 </div>
 
