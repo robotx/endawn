@@ -32,8 +32,8 @@ $_SESSION['token_time'] = time();
 
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
     <?php
-    if(!isset($_SESSION['id'])) { echo "<img class='avatar' src='.$avatar.'/>
-    <h2 class='avatarname'>Bonjour, " + $pseudo +"</h2>"; } else echo "<br/><br/><br/>"?>
+    if(!isset($_SESSION['id']) && !is_null($_SESSION['pseudo'])) { echo "<img class='avatar' src='.$avatar.'/>
+    <h2 class='avatarname'>Bonjour, " . $pseudo ."</h2>"; } else echo "<br/><br/><br/>"?>
     <a href="#"><div class="button1" id="adminproj"><h3 id="adminbtntitle" class="title">Administration du projet</h3></div></a>
     <a href="#"><div class="button1" id="News"><h3 class="title">News</h3></div></a>
     <a href="#"><div class="button1" id="Forum"><h3 class="title">Forum</h3></div></a>
