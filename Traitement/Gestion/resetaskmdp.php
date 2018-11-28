@@ -23,21 +23,30 @@ if($email != $emailsql){ // si l'adresse mail n'existe pas
     infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe.");
     die();
 }else{ // si l'adresse mail existe
+    try {
         $password = generation_pwd(6);
+        $sql = "UPDATE Users SET r_mdp_clef= ? WHERE email='$emailsql'";
+        $insert = $pdo->prepare($sql);
+        $insert->execute(array($password));
 
         $mail_destinataire = $emailsql;
         $sujet = "Reinitialisation du mot de passe";
         $message = "Cet email a été envoyé à partir de http://www.endawn.com .
         Tu as fait une demande de réinitialisation de mot de passe.
-        Voici ton mot de passe : '.$password.'
+        Lien vers la réinitialisation de mot de passe : 127.0.0.1/endawn/resetpassword.php
         
-        Lien vers la réinitialisation de mot de passe : 
+        Rentre le code arpès avoir cliqué sur le lien : '.$password.'
         
         Cordialement
         Administrateur";
         $head = "Bonjour $pseudosql ";
         mail($mail_destinataire, $sujet, $message, $head);
-    infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe.");
+        infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe.");
+
+    }catch(PDOException $e)
+    {
+        erreur("98","t_mo_error_2"); die();//echo $sql . "<br>" . $e->getMessage();
+    }
     }
 
 ?>

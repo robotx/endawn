@@ -3,8 +3,8 @@
   - [ ] CSS media queries
   - [X] autre chose
   - [X] Redimentionnement des images
-  - [ ] Rename les images avec le pseudo de la session
-  - [ ] Finir le reset de mot de passe
+  - [X] Rename les images avec le pseudo de la session
+  - [ ] Finir le reset de mot de passe (créer la BDD time)
 
 # Next
 
