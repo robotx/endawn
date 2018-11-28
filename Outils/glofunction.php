@@ -346,4 +346,39 @@ function bbcodetraitementmessagefocus($texte)
         return $texte;
     }
 }
+
+// sudo apt-get install php7.0-gd
+function conversionimage($source, $destination, $largeur, $hauteur, $qualite, $extension){
+    switch ($extension) {
+        case ".jpg":
+            $imageSize = getimagesize($source);
+            $imageRessource= imagecreatefromjpeg($source);
+            $imageFinal = imagecreatetruecolor($largeur, $hauteur);
+            $final = imagecopyresampled($imageFinal, $imageRessource, 0,0,0,0, $largeur, $hauteur, $imageSize[0], $imageSize[1]);
+            imagejpeg($imageFinal, $destination, $qualite);
+            break;
+        case ".jpeg":
+            $imageSize = getimagesize($source);
+            $imageRessource= imagecreatefromjpeg($source);
+            $imageFinal = imagecreatetruecolor($largeur, $hauteur);
+            $final = imagecopyresampled($imageFinal, $imageRessource, 0,0,0,0, $largeur, $hauteur, $imageSize[0], $imageSize[1]);
+            imagejpeg($imageFinal, $destination, $qualite);
+            break;
+        case ".png":
+            $imageSize = getimagesize($source);
+            $imageRessource= imagecreatefrompng($source);
+            $imageFinal = imagecreatetruecolor($largeur, $hauteur);
+            $final = imagecopyresampled($imageFinal, $imageRessource, 0,0,0,0, $largeur, $hauteur, $imageSize[0], $imageSize[1]);
+            imagepng($imageFinal, $destination, $qualite);
+            break;
+        case ".gif":
+            $imageSize = getimagesize($source);
+            $imageRessource= imagecreatefromgif($source);
+            $imageFinal = imagecreatetruecolor($largeur, $hauteur);
+            $final = imagecopyresampled($imageFinal, $imageRessource, 0,0,0,0, $largeur, $hauteur, $imageSize[0], $imageSize[1]);
+            imagegif($imageFinal, $destination, $qualite);
+            break;
+        }
+
+}
 ?>

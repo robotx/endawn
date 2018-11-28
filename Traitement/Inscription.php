@@ -116,8 +116,8 @@ if($_POST['token'] == $_SESSION['tokenins']
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! //
 
-    define('WIDTH_MAX', 300);    // Largeur max de l'image en pixels
-    define('HEIGHT_MAX', 200);  // Hauteur max de l'image en pixels
+//define('WIDTH_MAX', 300);    // Largeur max de l'image en pixels
+//define('HEIGHT_MAX', 200);  // Hauteur max de l'image en pixels
     $erreurimg;
     $erreurimgupload;
     $dossier = $_SERVER['DOCUMENT_ROOT'].'/endawn/Style/img/upload/';
@@ -133,22 +133,22 @@ if($_POST['token'] == $_SESSION['tokenins']
         if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
         {
             $erreurimg = "Vous devez uploader un fichier de type png, gif, jpg, jpeg...";
-            header('location: ../error.php?iderror='.$erreurimg.'');
+            header('location: error.php?iderror='.$erreurimg.'');
             die();
         }
-        if($taille>$taille_maxi)
+        /*if($taille>$taille_maxi)
         {
             $erreurimg = "Le fichier est trop gros...";
-            header('location: ../error.php?iderror='.$erreurimg.'');
+            header('location: error.php?iderror='.$erreurimg.'');
             die();
         }
         if($dimensions[0] != WIDTH_MAX || $dimensions[1] != HEIGHT_MAX){
 
             $erreurimg = "L'image doit être du 300x200 pixels";
-            header('location: ../error.php?iderror='.$erreurimg.'');
+            header('location: error.php?iderror='.$erreurimg.'');
             die();
 
-        }
+        }*/
         if(!isset($erreurimg)) //S'il n'y a pas d'erreur, on upload
         {
             //On formate le nom du fichier ici...
@@ -158,19 +158,19 @@ if($_POST['token'] == $_SESSION['tokenins']
             $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
             if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
             {
+                conversionimage($dossier . $fichier,$dossier . $pseudo . "_" . $fichier,'100','100',100, $extension);
+                unlink($dossier . $fichier);
                 echo 'Upload effectué avec succès !\n';
 
             }
             else //Sinon (la fonction renvoie FALSE).
             {
-                erreur("119","t_in_error_1");
-                die();
+                echo "119";
             }
         }
         else
         {
-            erreur("120","t_in_error_1",$erreurimg);
-            die();
+            echo "120";
         }
     }else if(empty($taille)){
         $fichier = "profileempty.png";
@@ -233,16 +233,15 @@ if($_POST['token'] == $_SESSION['tokenins']
         $mail_destinataire = $email;
         $sujet = "Validation de l'inscription sur le site Endawn";
         $message = "Cet email a été envoyé à partir de http://www.endawn.com
-                     Petit rappel de tes identifiants :
-                     Ton pseudo est: $pseudo
-                     Ton mot de passe est: ********
-                     Cet email nous permet de verifier que ton adresse mail est correcte.
-                     Clique sur le lien ci dessous afin de valider ton inscription :
-                     http://127.0.0.1/endawn/Traitement/Inscriptionvalide.php?pseudo=$pseudo&clef=$clef
-                     (Lien valide pendant 24h)
+        Petit rappel de tes identifiants :
+        Ton pseudo est: $pseudo
+        Cet email nous permet de verifier que ton adresse mail est correcte.
+        Clique sur le lien ci dessous afin de valider ton inscription :
+        http://127.0.0.1/endawn/Traitement/Inscriptionvalide.php?pseudo=$pseudo&clef=$clef
+        (Lien valide pendant 24h)
 
-                     Cordialement
-                     Administrateur";
+        Cordialement
+        Administrateur";
         $head = "Bonjour $pseudo ";
         mail($mail_destinataire, $sujet, $message, $head);
     }else{
