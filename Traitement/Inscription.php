@@ -165,12 +165,12 @@ if($_POST['token'] == $_SESSION['tokenins']
             }
             else //Sinon (la fonction renvoie FALSE).
             {
-                echo "119";
+                erreur("119", "t_in_error_1") ;
             }
         }
         else
         {
-            echo "120";
+            erreur("120", "t_in_error_1") ;
         }
     }else if(empty($taille)){
         $fichier = "profileempty.png";
@@ -208,7 +208,7 @@ if($_POST['token'] == $_SESSION['tokenins']
                 $sql = "INSERT INTO Userstemp(nom, prenom, pseudo, pass, email, sexe, age, pays, avatar, timestamp1, clef)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $insert = $pdo->prepare($sql);
-                $insert->execute(array($nom,$prenom,$pseudo,password_hash($pass, PASSWORD_DEFAULT),$email,$sexe,$age,$pays, "Style/img/upload/$fichier", $timestamp, $clef));
+                $insert->execute(array($nom,$prenom,$pseudo,password_hash($pass, PASSWORD_DEFAULT),$email,$sexe,$age,$pays, "Style/img/upload/$pseudo" . "_" . $fichier, $timestamp, $clef));
                 $noerrorresultat = true;
             }
             catch(PDOException $e)
@@ -232,16 +232,16 @@ if($_POST['token'] == $_SESSION['tokenins']
 
         $mail_destinataire = $email;
         $sujet = "Validation de l'inscription sur le site Endawn";
-        $message = "Cet email a été envoyé à partir de http://www.endawn.com
-        Petit rappel de tes identifiants :
-        Ton pseudo est: $pseudo
-        Cet email nous permet de verifier que ton adresse mail est correcte.
-        Clique sur le lien ci dessous afin de valider ton inscription :
-        http://127.0.0.1/endawn/Traitement/Inscriptionvalide.php?pseudo=$pseudo&clef=$clef
-        (Lien valide pendant 24h)
-
-        Cordialement
-        Administrateur";
+        $message = "Cet email a été envoyé à partir de http://www.endawn.com\n".
+        "Petit rappel de tes identifiants :\n".
+        "Ton pseudo est: $pseudo\n".
+        "Cet email nous permet de verifier que ton adresse mail est correcte.\n".
+        "Clique sur le lien ci dessous afin de valider ton inscription :\n".
+        "http://127.0.0.1/endawn/Traitement/Inscriptionvalide.php?pseudo=$pseudo&clef=$clef\n".
+        "Lien valide pendant 24h)\n\n".
+    
+        "Cordialement,\n".
+        "Administrateur";
         $head = "Bonjour $pseudo ";
         mail($mail_destinataire, $sujet, $message, $head);
     }else{

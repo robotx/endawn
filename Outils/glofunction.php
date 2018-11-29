@@ -1,4 +1,5 @@
 <?php
+
 function reduiretexte($texte)
 {
     $max_caracteres=70;
@@ -41,7 +42,7 @@ function infowarn($num, $info)
     switch ($num) {
         case "1":
         $information = "$info";
-        header('location: ../info.php?idinfo='.$information.'');
+        header('location: ../../info.php?idinfo='.$information.'');
         die();
         break;
     }
@@ -251,6 +252,11 @@ function erreur($erreur, $infosupp, $varriable)
             header('location: ../../error.php?iderror='.$error.'');
             die();
             break;
+        case "146":
+            $error= "Le lien est exipiré ou vous avez effectué trop de demande aujourd'hui (code=146)";
+            header('location: ../../error.php?iderror='.$error.'');
+            die();
+            break;
     }
 }
 
@@ -378,7 +384,18 @@ function conversionimage($source, $destination, $largeur, $hauteur, $qualite, $e
             $final = imagecopyresampled($imageFinal, $imageRessource, 0,0,0,0, $largeur, $hauteur, $imageSize[0], $imageSize[1]);
             imagegif($imageFinal, $destination, $qualite);
             break;
-        }
+        }}
 
+function updateinfo($table, $pdo, $setinDTB, $whereinDTB, $whatinDTB, $insertinDTB){
+    try {
+        $sql = "UPDATE $table SET $setinDTB='$insertinDTB' WHERE $whereinDTB='$whatinDTB'";
+        $insert = $pdo->prepare($sql);
+        $insert->execute();
+
+    }catch(PDOException $e)
+    {
+        erreur("98","o_glo_error_2"); die();//echo $sql . "<br>" . $e->getMessage();
+        die();
+    }
 }
 ?>

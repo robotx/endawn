@@ -26,8 +26,8 @@ $_SESSION['token_time'] = time();
 <body>
 <div id="topbar">
 <a href="index.php"><h1 class="maintitle">Endawn</h1></a>
-<?php if(!isset($_SESSION['id'])) echo '<a href="#" onclick="document.getElementById(\'idconnexion\').style.display=\'block\';document.getElementById(\'idinscription\').style.display=\'none\'"><h3 id="connect" class="title">Connexion</h3></a>
-<a href="#" onclick="document.getElementById(\'idinscription\').style.display=\'block\';document.getElementById(\'idconnexion\').style.display=\'none\'"><h3 id="inscription" class="title">Inscription</h3></a>'?>
+<?php if(!isset($_SESSION['id'])) echo '<a href="#" onclick="document.getElementById(\'idinscription\').style.display=\'none\';document.getElementById(\'iddemandederesetmdp\').style.display=\'none\';document.getElementById(\'idconnexion\').style.display=\'block\'"><h3 id="connect" class="title">Connexion</h3></a>
+<a href="#" onclick="document.getElementById(\'idconnexion\').style.display=\'none\';document.getElementById(\'iddemandederesetmdp\').style.display=\'none\';document.getElementById(\'idinscription\').style.display=\'block\'"><h3 id="inscription" class="title">Inscription</h3></a>'?>
 </div>
 
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
@@ -78,7 +78,7 @@ $_SESSION['token_time'] = time();
                     </select>
 
                     <!-- On limite le fichier à 100Ko -->
-                    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                    <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
                     <input type="file" name="avatar">
                 </div>
                 <div id="formtableau">
@@ -113,7 +113,7 @@ $_SESSION['token_time'] = time();
                       <input type="password" id="passconnexion" name="pass" placeholder="Mot de passe.." required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
                     </div>
                     <input type="hidden" name="token" id="token" value="<?php echo $token ?>" />
-                        <a href="Traitement/Gestion/resetaskmdp.php" id="mdpoublier">Mot de passe oublié ?</a>
+                    <?php echo '<a href="#" onclick="document.getElementById(\'idconnexion\').style.display=\'none\';document.getElementById(\'idinscription\').style.display=\'none\';document.getElementById(\'iddemandederesetmdp\').style.display=\'block\'"><span id="mdpoublier">Mot de passe oublié ?</span></a> '?>
                         <br>
                         <br>
                           <div id="formtableausubmit">
@@ -122,6 +122,25 @@ $_SESSION['token_time'] = time();
               </div>
           </form>
         </div>
+
+    <div id="iddemandederesetmdp" class="modaldemandederesetmdp">
+        <span onclick="document.getElementById('iddemandederesetmdp').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="formdemandederesetmdp" method="post" action="Traitement/Gestion/resetaskmdp.php">
+            <div class="container">
+                <label id="formtitleconnexion"><h1>Réinitialisation mot de passe</h1></label>
+                <br>
+                <div id="formtableauconnexion">
+                    <input class="input-field" type="text" id="emailforreset" name="email" placeholder="Email" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                </div>
+                <input type="hidden" name="token" id="token" value="<?php echo $token ?>" />
+                <br>
+                <br>
+                <div id="formtableausubmit">
+                    <button type="submit" id="submit">Valider</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
 </body>
 <script src="Js/Style.js"></script>

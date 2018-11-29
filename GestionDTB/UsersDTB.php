@@ -22,6 +22,7 @@ try {
     ban varchar(10) NOT NULL DEFAULT 'non',
     r_mdp_clef varchar(255) NOT NULL DEFAULT 'rien',
     r_mdp_time varchar(255) DEFAULT 'NULL',
+    r_mdp_nb varchar(255) NOT NULL DEFAULT '0',
     groupid int(1) DEFAULT '0',
     PRIMARY KEY (`id`))";
 
