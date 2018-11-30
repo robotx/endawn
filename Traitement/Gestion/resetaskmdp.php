@@ -26,7 +26,7 @@ $tempsnow = date('Y-m-d H:i:s');
 $tempsnowconversion = gettimes_timestamps($tempsnow);
 
 if($email != $emailsql){ // si l'adresse mail n'existe pas
-    infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe.");
+    infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe. Cliquer ici pour passer à la page de reinitialisation.");
     die();
 }else{ // si l'adresse mail existe
     if($r_mdp_nbsql < 3 && ($r_mdp_timesql > $tempsnowconversion || $r_mdp_timesql == "NULL")){
@@ -52,7 +52,7 @@ if($email != $emailsql){ // si l'adresse mail n'existe pas
             "Administrateur";
             $head = "Bonjour $pseudosql ";
             mail($mail_destinataire, $sujet, $message, $head);
-            infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe.");
+            infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe. Cliquer ici pour passer à la page de reinitialisation.");
 
     }catch(PDOException $e)
     {

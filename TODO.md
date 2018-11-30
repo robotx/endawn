@@ -4,7 +4,7 @@
   - [X] autre chose
   - [X] Redimentionnement des images
   - [X] Rename les images avec le pseudo de la session
-  - [ ] Finir le reset de mot de passe (créer la BDD time)
+  - [ ] Finir le reset de mot de passe 50%
   - [ ] Mail d'activation/reset mdp à refaire de compte
 
 # Next
