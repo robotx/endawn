@@ -13,6 +13,8 @@ $_SESSION['token_timeins'] = time();
 $token = md5(uniqid(rand(), TRUE));
 $_SESSION['token'] = $token;
 $_SESSION['token_time'] = time();
+
+$mfr = $_GET["mfr"];
 ?>
 
 <html>
@@ -62,6 +64,7 @@ $_SESSION['token_time'] = time();
                 <div id="formtableauconnexion">
                     <input type="password" id="passreset" name="pass2" placeholder="Retaper mot de passe.." required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
                 </div>
+                <input type="hidden" name="mfr" id="mfr" value="<?php echo $mfr ?>" />
                 <br>
                 <br>
                 <div id="formtableausubmit">

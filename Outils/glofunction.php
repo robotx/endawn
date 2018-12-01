@@ -256,6 +256,21 @@ function erreur($erreur, $infosupp, $varriable)
             header('location: ../../error.php?iderror='.$error.'');
             die();
             break;
+        case "42":
+            $error= "Vous devez rentrer une code";
+            header('location: ../../error.php?iderror='.$error.'');
+            die();
+            break;
+        case "43":
+            $error= "Vous devez rentrer un mot de passe valide";
+            header('location: ../../error.php?iderror='.$error.'');
+            die();
+            break;
+        case "44":
+            $error= "Lien de réinitialisation expiré !";
+            header('location: ../../error.php?iderror='.$error.'');
+            die();
+            break;
     }
 }
 
