@@ -41,12 +41,11 @@ function infowarn($num, $info)
 {
     switch ($num) {
         case "1":
-        $information = "$info";
-        header('location: ../../info.php?idinfo='.$information.'');
-        die();
-        break;
-    }
-}
+            $information = "$info";
+            header('location: ../../info.php?idinfo='.$information.'');
+            die();
+            break;
+}}
 
 
 function erreur($erreur, $infosupp, $varriable)

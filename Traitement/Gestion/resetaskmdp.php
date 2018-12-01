@@ -26,7 +26,7 @@ $tempsnow = date('Y-m-d H:i:s');
 $tempsnowconversion = gettimes_timestamps($tempsnow);
 
 if($email != $emailsql){ // si l'adresse mail n'existe pas
-    infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe. Cliquer ici pour passer à la page de reinitialisation.");
+    infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe.");
     die();
 }else{ // si l'adresse mail existe
     if($r_mdp_nbsql < 3 && ($r_mdp_timesql > $tempsnowconversion || $r_mdp_timesql == "NULL")){
@@ -44,7 +44,7 @@ if($email != $emailsql){ // si l'adresse mail n'existe pas
             $sujet = "Reinitialisation du mot de passe";
             $message = "Cet email a été envoyé à partir de http://www.endawn.com .\n".
             "Tu as fait une demande de réinitialisation de mot de passe.\n".
-            "Lien vers la réinitialisation de mot de passe : http://127.0.0.1/endawn/resetpassword.php\n".
+            "Lien vers la réinitialisation de mot de passe : http://127.0.0.1/endawn/resetpassword.php?mfr=$email\n".
                     
             "Rentre le code arpès avoir cliqué sur le lien : $password\n\n".
                         
@@ -52,7 +52,7 @@ if($email != $emailsql){ // si l'adresse mail n'existe pas
             "Administrateur";
             $head = "Bonjour $pseudosql ";
             mail($mail_destinataire, $sujet, $message, $head);
-            infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe. Cliquer ici pour passer à la page de reinitialisation.");
+            infowarn("1","Si l'adresse mail éxiste vous receverez un mail pour la rénitialisation de mot de passe.");
 
     }catch(PDOException $e)
     {
