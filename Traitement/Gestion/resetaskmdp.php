@@ -34,9 +34,7 @@ if($email != $emailsql){ // si l'adresse mail n'existe pas
             updateinfo("Users", $pdo, "r_mdp_clef", "email", $emailsql, "rien");
             updateinfo("Users", $pdo, "r_mdp_time", "email", $emailsql, "NULL");
             updateinfo("Users", $pdo, "r_mdp_nb", "email", $emailsql, 0);
-
-            erreur("98","t_ges_res_error_3"); die();//echo $sql . "<br>" . $e->getMessage();
-        }else{
+        }
             if($r_mdp_nbsql < 3 && ($r_mdp_timesql > $tempsnowconversion || $r_mdp_timesql == "NULL")){
                 try {
                     $password = generation_pwd(6);
@@ -67,6 +65,6 @@ if($email != $emailsql){ // si l'adresse mail n'existe pas
                 erreur("99","t_ges_res_error_1"); die();//echo $sql . "<br>" . $e->getMessage();
             }}else {
                 erreur("146", "t_ges_res_error_1");
-            }}}}
+            }}}
 
 ?>

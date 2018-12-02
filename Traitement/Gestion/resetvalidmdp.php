@@ -50,13 +50,10 @@ if($mfr != $emailsql){
             updateinfo("Users", $pdo, "r_mdp_clef", "email", $emailsql, "rien");
             updateinfo("Users", $pdo, "r_mdp_time", "email", $emailsql, "NULL");
             updateinfo("Users", $pdo, "r_mdp_nb", "email", $emailsql, 0);
-
-            erreur("99","t_ges_res_error_3"); die();//echo $sql . "<br>" . $e->getMessage();
-        }else{
+        }
             if($r_mdp_nbsql < 3 && $r_mdp_timesql > $tempsnowconversion && password_verify($code, $r_mdp_clefsql)){
                 try {
                     updateinfo("Users", $pdo, "r_mdp_clef", "email", $emailsql, "rien");
-                    updateinfo("Users", $pdo, "r_mdp_time", "email", $emailsql, "NULL");
                     updateinfo("Users", $pdo, "pass", "email", $emailsql, password_hash($pass1, PASSWORD_DEFAULT));
 
                     infowarn("1","Votre mot de passe a bien été reinitialisé.");
@@ -66,7 +63,7 @@ if($mfr != $emailsql){
                     erreur("99","t_ges_res_error_1"); die();//echo $sql . "<br>" . $e->getMessage();
                 }}else{
                     erreur("146", "t_ges_res_error_3");
-            }}}
-    }
+            }
+    }}
 
 ?>
