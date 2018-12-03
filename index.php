@@ -19,17 +19,17 @@ $_SESSION['token_time'] = time();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Style/normalize.css" />
     <link rel="stylesheet" href="Style/style.css" />
-    <link rel="stylesheet" href="Style/insform.css" />
 </head>
 <body>
+
 <div id="topbar">
 <a href="index.php"><h1 class="maintitle">Endawn</h1></a>
 <?php if(!isset($_SESSION['id'])) echo '<a href="#" onclick="document.getElementById(\'idinscription\').style.display=\'none\';document.getElementById(\'iddemandederesetmdp\').style.display=\'none\';document.getElementById(\'idconnexion\').style.display=\'block\'"><h3 id="connect" class="title">Connexion</h3></a>
 <a href="#" onclick="document.getElementById(\'idconnexion\').style.display=\'none\';document.getElementById(\'iddemandederesetmdp\').style.display=\'none\';document.getElementById(\'idinscription\').style.display=\'block\'"><h3 id="inscription" class="title">Inscription</h3></a>'?>
 </div>
-
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
     <?php
     if(!isset($_SESSION['id']) && !is_null($_SESSION['pseudo'])) { echo "<img class='avatar' src='.$avatar.'/>
@@ -79,7 +79,8 @@ $_SESSION['token_time'] = time();
 
                     <!-- On limite le fichier à 100Ko -->
                     <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
-                    <input type="file" name="avatar">
+                    <label for="file-upload" class="custom-file-upload">...</label>
+                    <input id=file-upload type="file" name="avatar">
                 </div>
                 <div id="formtableau">
                     <input class="input-field" type="password" id="pass" name="pass"
@@ -145,6 +146,6 @@ $_SESSION['token_time'] = time();
 </body>
 <script src="Js/Style.js"></script>
 <script src="Js/Connexion.js"></script>
-
+<script src="Js/jquery-3.3.1.min.js"></script>
 </html>
 
