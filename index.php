@@ -81,6 +81,7 @@ $_SESSION['token_time'] = time();
                     <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
                     <label for="file-upload" class="custom-file-upload">...</label>
                     <input id=file-upload type="file" name="avatar">
+                    <div id="uploadavatar">avatar</div>
                 </div>
                 <div id="formtableau">
                     <input class="input-field" type="password" id="pass" name="pass"
