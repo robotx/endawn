@@ -10,7 +10,7 @@ ini_set('display_errors', 'on');
 
         "Cordialement,\n".
         "Administrateur";
-        $head = "Bonjour $pseudo ";
+        $head = "Bonjour ";
         mail($mail_destinataire, $sujet, $message, $head);
 
 ?>
