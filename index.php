@@ -26,7 +26,7 @@ $_SESSION['token_time'] = time();
 <body>
 
 <div id="topbar">
-<a href="index.php"><h1 class="maintitle">Lyniria</h1></a>
+<a href="index.php"><h1 class="maintitle">Endawn</h1></a>
 <?php if(!isset($_SESSION['id'])) echo '<a href="#" onclick="document.getElementById(\'idinscription\').style.display=\'none\';document.getElementById(\'iddemandederesetmdp\').style.display=\'none\';document.getElementById(\'idconnexion\').style.display=\'block\'"><h3 id="connect" class="title">Connexion</h3></a>
 <a href="#" onclick="document.getElementById(\'idconnexion\').style.display=\'none\';document.getElementById(\'iddemandederesetmdp\').style.display=\'none\';document.getElementById(\'idinscription\').style.display=\'block\'"><h3 id="inscription" class="title">Inscription</h3></a>'?>
 </div>
