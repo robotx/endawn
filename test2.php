@@ -10,7 +10,7 @@ $pass = htmlentities($_POST['pass']);
 
 if(empty($pseudo) || empty($pass))
 {
-    erreur("577","t_co_error_1");
+    erreur("577","t_co_error_1","");
 }
 else
 {
@@ -18,7 +18,7 @@ else
     try {
         $select = $pdo->prepare($sql);
         $select->execute();
-    } catch (PDOException $e){erreur("98","t_co_error_2");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+    } catch (PDOException $e){erreur("98","t_co_error_2","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
     while($data = $select->fetch())
     {
         $idresult = $data['id'];
@@ -45,7 +45,7 @@ else
                 $insert->execute();
                 $noerrorresultat2 = true;
                 $bansql = "oui";
-            }catch(PDOException $e){erreur("98","t_co_error_1.1"); $noerrorresultat2 = false;}//echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+            }catch(PDOException $e){erreur("98","t_co_error_1.1",""); $noerrorresultat2 = false;}//echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
         };
         //--------------------------------
         session_start();
@@ -75,7 +75,7 @@ else
 
         header('location: index.php');
     }else{
-        erreur("788","t_co_error_1");
+        erreur("788","t_co_error_1","");
         die();
     }
 
