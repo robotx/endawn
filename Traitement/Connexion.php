@@ -17,7 +17,7 @@ if($_POST['token'] == $_SESSION['token']
 
     if(empty($pseudo) || empty($pass))
     {
-        erreur("577","t_co_error_1");
+        erreur("577","t_co_error_1","");
     }
     else
     {
@@ -29,7 +29,7 @@ if($_POST['token'] == $_SESSION['token']
         try {
             $recherche = $pdo->prepare($sql);
             $recherche->execute();
-        } catch (PDOException $e){erreur("98","t_co_error_1");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+        } catch (PDOException $e){erreur("98","t_co_error_1","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
         $count = $recherche->rowCount();
 
         if($count >= 10){
@@ -48,7 +48,7 @@ if($_POST['token'] == $_SESSION['token']
                     $sql = "DELETE FROM spamconnexion WHERE ip='$ip'";
                     $delip = $pdo->prepare($sql);
                     $delip->execute();
-                } catch (PDOException $e){erreur("98","t_co_error_1.2");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+                } catch (PDOException $e){erreur("98","t_co_error_1.2","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
             }
         }
 
@@ -56,7 +56,7 @@ if($_POST['token'] == $_SESSION['token']
         try {
             $recherche = $pdo->prepare($sql);
             $recherche->execute();
-        } catch (PDOException $e){erreur("98","t_co_error_1.1");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+        } catch (PDOException $e){erreur("98","t_co_error_1.1","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
         $count2 = $recherche->rowCount();
 
         if($count2 < 10){
@@ -65,7 +65,7 @@ if($_POST['token'] == $_SESSION['token']
             try {
                 $select = $pdo->prepare($sql);
                 $select->execute();
-            } catch (PDOException $e){erreur("98","t_co_error_2");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+            } catch (PDOException $e){erreur("98","t_co_error_2","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
             while($data = $select->fetch())
             {
                 $idresult = $data['id'];
@@ -92,7 +92,7 @@ if($_POST['token'] == $_SESSION['token']
                         $insert->execute();
                         $noerrorresultat2 = true;
                         $bansql = "oui";
-                    }catch(PDOException $e){erreur("98","t_co_error_1.1"); $noerrorresultat2 = false;}//echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+                    }catch(PDOException $e){erreur("98","t_co_error_1.1",""); $noerrorresultat2 = false;}//echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
                 };
                 //--------------------------------
                 if($bansql == "non"){
@@ -137,18 +137,18 @@ if($_POST['token'] == $_SESSION['token']
                 }
                 catch(PDOException $e)
                 {
-                    erreur("98","t_co_error_3");//echo $sql . "<br>" . $e->getMessage();
+                    erreur("98","t_co_error_3","");//echo $sql . "<br>" . $e->getMessage();
                 }
 
-                erreur("11","t_co_error_1");
+                erreur("11","t_co_error_1","");
                 die();
             }
         }else{
-            erreur("788","t_co_error_1");
+            erreur("788","t_co_error_1","");
             die();
 
         }}}else{
-    erreur("933","t_co_error_1");
+    erreur("933","t_co_error_1","");
     die('Session expirée !');
 }
 

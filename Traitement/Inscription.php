@@ -28,7 +28,7 @@ if($_POST['token'] == $_SESSION['tokenins']
     try {
         $select = $pdo->prepare($sql);
         $select->execute();
-    } catch (PDOException $e){erreur("98","t_in_error_1");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+    } catch (PDOException $e){erreur("98","t_in_error_1","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
     while($data = $select->fetch())
     {
         $pseudoresult = $data['pseudo'];
@@ -38,7 +38,7 @@ if($_POST['token'] == $_SESSION['tokenins']
     try {
         $select = $pdo->prepare($sql);
         $select->execute();
-    } catch (PDOException $e){erreur("98","t_in_error_2");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+    } catch (PDOException $e){erreur("98","t_in_error_2","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
     while($data = $select->fetch())
     {
         $emailresult = $data['email'];
@@ -48,7 +48,7 @@ if($_POST['token'] == $_SESSION['tokenins']
     try {
         $select = $pdo->prepare($sql);
         $select->execute();
-    } catch (PDOException $e){erreur("98","t_in_error_3");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+    } catch (PDOException $e){erreur("98","t_in_error_3","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
     while($data = $select->fetch())
     {
         $pseudoresult2 = $data['pseudo'];
@@ -58,7 +58,7 @@ if($_POST['token'] == $_SESSION['tokenins']
     try {
         $select = $pdo->prepare($sql);
         $select->execute();
-    } catch (PDOException $e){erreur("98","t_in_error_4");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+    } catch (PDOException $e){erreur("98","t_in_error_4","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
     while($data = $select->fetch())
     {
         $emailresult2 = $data['email'];
@@ -165,12 +165,12 @@ if($_POST['token'] == $_SESSION['tokenins']
             }
             else //Sinon (la fonction renvoie FALSE).
             {
-                erreur("119", "t_in_error_1") ;
+                erreur("119", "t_in_error_1","") ;
             }
         }
         else
         {
-            erreur("120", "t_in_error_1") ;
+            erreur("120", "t_in_error_1","") ;
         }
     }else if(empty($taille)){
         $fichier = "profileempty.png";
@@ -182,22 +182,22 @@ if($_POST['token'] == $_SESSION['tokenins']
 
         if($pseudo == $pseudoresult){
             $errors_exist[$pseudo] = "Ce pseudo est déjà utilisé ! ";
-            erreur("342","t_in_error_1");
+            erreur("342","t_in_error_1","");
             die();
         }
         if($email == $emailresult){
             $errors_exist[$email] = "Cette adresse email est déjà utilisée !";
-            erreur("343","t_in_error_1");
+            erreur("343","t_in_error_1","");
             die();
         }
         if($pseudo == $pseudoresult2){
             $errors_exist[$pseudo] = "Ce pseudo est déjà utilisé ! ";
-            erreur("342","t_in_error_2");
+            erreur("342","t_in_error_2","");
             die();
         }
         if($email == $emailresult2){
             $errors_exist[$email] = "Cette adresse email est déjà utilisée !";
-            erreur("343","t_in_error_2");
+            erreur("343","t_in_error_2","");
             die();
         }
         if(empty($errors_exist)){
@@ -213,7 +213,7 @@ if($_POST['token'] == $_SESSION['tokenins']
             }
             catch(PDOException $e)
             {
-                erreur("98","t_in_error_5");//echo $sql . "<br>" . $e->getMessage();
+                erreur("98","t_in_error_5","");//echo $sql . "<br>" . $e->getMessage();
             }
         }else{
             echo "<pre>";
@@ -245,13 +245,13 @@ if($_POST['token'] == $_SESSION['tokenins']
         $head = "Bonjour $pseudo ";
         mail($mail_destinataire, $sujet, $message, $head);
     }else{
-        erreur("98","t_in_error_1_send");
+        erreur("98","t_in_error_1_send","");
         die();
     }
 
 
 }else{
-    erreur("933","t_in_error_1");
+    erreur("933","t_in_error_1","");
 }
 $messageemail = "Un email de confirmation vous a été envoyé.";
 header('location: ../info.php?idinfo='.$messageemail.'');

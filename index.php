@@ -105,7 +105,7 @@ $_SESSION['token_time'] = time();
 
     <div id="idconnexion" class="modal2">
           <span onclick="document.getElementById('idconnexion').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <form class="formconnexion" method="post" action="test2.php">
+          <form class="formconnexion" method="post" action="Traitement/Connexion.php">
             <div class="container">
               <label id="formtitleconnexion"><h1>Connexion</h1></label>
               <br>

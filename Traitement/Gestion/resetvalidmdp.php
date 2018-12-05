@@ -13,15 +13,15 @@ $pass2 = htmlentities($_POST['pass2']);
 $mfr = htmlentities($_POST['mfr']);
 
 if(empty($code)){
-    erreur("42","t_ges_error_1");
+    erreur("42","t_ges_error_1","");
     die();
 }
 if(empty($pass1) || $pass1 != $pass2 || empty($pass2)){
-    erreur("43","t_ges_error_2");
+    erreur("43","t_ges_error_2","");
     die();
 }
 if(empty($mfr)){
-    erreur("44","$mfr");
+    erreur("44","$mfr","");
     die();
 }
 
@@ -29,7 +29,7 @@ $sql = "SELECT * FROM `Users` WHERE email='$mfr'";
 try {
     $select = $pdo->prepare($sql);
     $select->execute();
-} catch (PDOException $e){erreur("99","t_ges_rei_m_error_2"); die();}//echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+} catch (PDOException $e){erreur("99","t_ges_rei_m_error_2",""); die();}//echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
 while($data = $select->fetch())
 {
     $emailsql = $data["email"];
@@ -42,7 +42,7 @@ $tempsnow = date('Y-m-d H:i:s');
 $tempsnowconversion = gettimes_timestamps($tempsnow);
 
 if($mfr != $emailsql){
-    erreur("44","t_ges_error_4");
+    erreur("44","t_ges_error_4","");
     die();
 }else{
     if($r_mdp_nbsql <= 3){
@@ -60,9 +60,9 @@ if($mfr != $emailsql){
 
                 }catch(PDOException $e)
                 {
-                    erreur("99","t_ges_res_error_1"); die();//echo $sql . "<br>" . $e->getMessage();
+                    erreur("99","t_ges_res_error_1",""); die();//echo $sql . "<br>" . $e->getMessage();
                 }}else{
-                    erreur("146", "t_ges_res_error_3");
+                    erreur("146", "t_ges_res_error_3","");
             }
     }}
 

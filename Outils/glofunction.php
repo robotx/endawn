@@ -408,7 +408,7 @@ function updateinfo($table, $pdo, $setinDTB, $whereinDTB, $whatinDTB, $insertinD
 
     }catch(PDOException $e)
     {
-        erreur("98","o_glo_error_2"); die();//echo $sql . "<br>" . $e->getMessage();
+        erreur("98","o_glo_error_2",""); die();//echo $sql . "<br>" . $e->getMessage();
         die();
     }
 }

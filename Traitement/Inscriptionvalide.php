@@ -16,7 +16,7 @@ $sql = "SELECT * FROM Userstemp WHERE pseudo='$pseudosearch'";
 try {
     $select = $pdo->prepare($sql);
     $select->execute();
-} catch (PDOException $e){erreur("98","t_in_v_error_1");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+} catch (PDOException $e){erreur("98","t_in_v_error_1","");} //echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
 while($data = $select->fetch())
 {
     $idresult = $data['id'];
@@ -52,7 +52,7 @@ if($timestampresult < $tempsnowconversion){
         }
         catch(PDOException $e)
         {
-            erreur("98","t_in_v_error_5.2");//echo $sql . "<br>" . $e->getMessage();
+            erreur("98","t_in_v_error_5.2","");//echo $sql . "<br>" . $e->getMessage();
             $noerrorresultat = true;
         }
 }
@@ -66,7 +66,7 @@ if($noerrorresultat == false){
     }
     catch(PDOException $e)
     {
-        erreur("98","t_in_v_error_6");//echo $sql . "<br>" . $e->getMessage();
+        erreur("98","t_in_v_error_6","");//echo $sql . "<br>" . $e->getMessage();
         $supprvalid = false;
     }
 }else if(($noerrorresultatredirect == true || $noerrorresultat == true)){
@@ -78,10 +78,10 @@ if($noerrorresultat == false){
     }
     catch(PDOException $e)
     {
-        erreur("98","t_in_v_error_7");//echo $sql . "<br>" . $e->getMessage();
+        erreur("98","t_in_v_error_7","");//echo $sql . "<br>" . $e->getMessage();
         $supprvalid = false;
     }
-    erreur("338","t_in_v_error_1");
+    erreur("338","t_in_v_error_1","");
     die();
 
 }
@@ -90,7 +90,7 @@ if($noerrorresultatredirect == false && $supprvalid == true){
     header('location: ../info.php?idinfo='.$messagebv.'');
     die();
 }else if($noerrorresultatredirect == true && $supprvalid == false){
-    erreur("156","t_in_v_error_666");
+    erreur("156","t_in_v_error_666","");
     die();
 }
 

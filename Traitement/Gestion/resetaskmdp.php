@@ -13,7 +13,7 @@ $sql = "SELECT * FROM `Users` WHERE email='$email'";
 try {
     $select = $pdo->prepare($sql);
     $select->execute();
-} catch (PDOException $e){erreur("99","t_ges_rei_m_error_2"); die();}//echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
+} catch (PDOException $e){erreur("99","t_ges_rei_m_error_2",""); die();}//echo 'Erreur SQL : '. $e->getMessage().'<br/>'; die(); }
 while($data = $select->fetch())
 {
     $emailsql = $data["email"];
@@ -62,9 +62,9 @@ if($email != $emailsql){ // si l'adresse mail n'existe pas
 
             }catch(PDOException $e)
             {
-                erreur("99","t_ges_res_error_1"); die();//echo $sql . "<br>" . $e->getMessage();
+                erreur("99","t_ges_res_error_1",""); die();//echo $sql . "<br>" . $e->getMessage();
             }}else {
-                erreur("146", "t_ges_res_error_1");
+                erreur("146", "t_ges_res_error_1","");
             }}}
 
 ?>
