@@ -122,7 +122,7 @@ function erreur($erreur, $infosupp, $varriable)
             die();
             break;
         case "11":
-            $error= "Vos identifiants sont incorrecte ! (11$infosupp)";
+            $error= "Vos identifiants sont incorrect ! (11$infosupp)";
             header('location: ../error.php?iderror='.$error.'');
             die();
             break;
