@@ -26,21 +26,22 @@ $_SESSION['token_time'] = time();
 <body>
 
 <div id="topbar">
-<a href="index.php"><h1 class="maintitle">Endawn</h1></a>
+<a href="index.php"><h1 class="maintitle">Lyniria</h1></a>
 <?php if(!isset($_SESSION['id'])) echo '<a href="#" onclick="document.getElementById(\'idinscription\').style.display=\'none\';document.getElementById(\'iddemandederesetmdp\').style.display=\'none\';document.getElementById(\'idconnexion\').style.display=\'block\'"><h3 id="connect" class="title">Connexion</h3></a>
 <a href="#" onclick="document.getElementById(\'idconnexion\').style.display=\'none\';document.getElementById(\'iddemandederesetmdp\').style.display=\'none\';document.getElementById(\'idinscription\').style.display=\'block\'"><h3 id="inscription" class="title">Inscription</h3></a>'?>
 </div>
 <div class="sidebar card animate-left" style="display:none" id="mySidebar">
     <?php
     if(!isset($_SESSION['id']) && !is_null($_SESSION['pseudo'])) { echo "<img class='avatar' src='.$avatar.'/>
-    <h2 class='avatarname'>Bonjour, " . $pseudo ."</h2>"; } else echo "<br/><br/><br/>"?>
+    <h2 class='avatarname'>Bonjour, " . $pseudo ."</h2>"; } else echo "<div></div><br/><br/><br/>"?>
     <a href="#"><div class="button1" id="adminproj"><h3 id="adminbtntitle" class="title">Administration du projet</h3></div></a>
-    <a href="#"><div class="button1" id="News"><h3 class="title">News</h3></div></a>
+    <a href="#"><div class="button1" id="News"><h3 class="title">Actualité</h3></div></a>
     <a href="#"><div class="button1" id="Forum"><h3 class="title">Forum</h3></div></a>
     <a href="#"><div class="button1" id="Revue"><h3 class="title">Revue</h3></div></a>
     <a href="#"><div class="button1" id="Timeline"><h3 class="title">Timeline</h3></div></a>
     <a href="#"><div class="button1" id="adminsite"><h3 id="adminbtntitle" class="title">Administration du site</h3></div></a>
     <a href="Traitement/logout.php"><img id="logout" width="70" height="70" src="Style/img/logout.svg" /></a>
+
     <img id="closeNav" onclick="w3_close()" width="50" height="50" src="Style/img/leftarrow.svg" />
 </div>
 
@@ -88,7 +89,7 @@ $_SESSION['token_time'] = time();
                            placeholder="Mot de passe" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
 
                     <input class="input-field" type="password" id="password_confirm" name="password_confirm"
-                           placeholder="Retaper le mot de passe"required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
+                           placeholder="Retaper le mot de passe" required oninvalid="this.setCustomValidity('Veuillez renseigner tous les champs !')">
                 </div>
                 <input type="hidden" name="token" id="token" value="<?php echo $tokenins ?>" />
                 <br>
