@@ -1,6 +1,7 @@
 <?php
 require_once ('Traitement/bdd/Connect.php');
 require_once ('Outils/glofunction.php');
+ini_set('display_errors', 'on');
 
 session_start();
 
