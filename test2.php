@@ -6,11 +6,6 @@ define('DELAI_MAXIMUM', 600);
 
 session_start();
 
-
-if($_POST['token'] == $_SESSION['token']
-    && (time() - $_SESSION['token_time']) <= DELAI_MAXIMUM)
-{
-
     $pseudo = htmlentities($_POST['pseudo']);
     $pass = htmlentities($_POST['pass']);
 
@@ -84,9 +79,7 @@ if($_POST['token'] == $_SESSION['token']
                 erreur("788","t_co_error_1");
                 die();
         }
-        }}else{
-    erreur("933","t_co_error_1");
-    die('Session expirée !');
+
 }
 
 ?>
